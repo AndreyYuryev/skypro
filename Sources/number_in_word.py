@@ -1,0 +1,922 @@
+ZERO = "ноль"
+ONE_M = "один"
+ONE_F = "одна"
+ONE_N = "одно"
+TWO_M = "два"
+TWO_F = "две"
+TWO_N = "два"
+TREE = "три"
+FOUR = "четыре"
+FIVE = "пять"
+SIX = "шесть"
+SEVEN = "семь"
+EIGHT = "восемь"
+NINE = "девять"
+TEN = "десять"
+ELEVEN = "одиннадцать"
+TWELVE = "двенадцать"
+THIRTEEN = "тринадцать"
+FOURTEEN = "четырнадцать"
+FIFTEEN = "пятнадцать"
+SIXTEEN = "шестнадцать"
+SEVENTEEN = "семнадцать"
+EIGHTEEN = "восемнадцать"
+NINETEEN = "девятнадцать"
+TWENTY = "двадцать"
+THIRTY  = "тридцать"
+FOURTY = "сорок"
+FIFTY  = "пятьдесят"
+SIXTY  = "шестьдесят"
+SEVENTY = "семьдесят"
+EIGHTY = "восемьдесят"
+NINETY = "девяносто"
+THOUSAND_ONE = "тысяча"
+THOUSAND_TWO = "тысячи"
+THOUSAND_TEN = "тысяч"
+MILLION_ONE = "миллион"
+MILLION_TWO = "миллиона"
+MILLION_TEN = "миллионов"
+BILLION_ONE = "миллиард"
+BILLION_TWO = "миллиарда"
+BILLION_TEN = "миллиардов"
+TRILLION_ONE = "триллион"
+TRILLION_TWO = "триллиона"
+TRILLION_TEN = "триллионов"
+HUNDRED = "сто"
+TWO_HUNDRED = "двести"
+TREE_FOUR_HUNDRED = "ста"
+HUNDREDS = "сот"
+
+
+str_numbers = input("Введите целое число от 0 до квадрилиона(1 и 15 нулей):")
+
+# разряды
+result_out = ""
+unit_digit = ""
+thousand_digit = ""
+million_digit = ""
+billion_digit = ""
+trillion_digit = ""
+
+if not str_numbers.isnumeric():
+    print("Число не соответствует требованию")
+else:
+    int_numbers = int(str_numbers)
+    if not 0 <= int_numbers <= 1000000000000000:
+        print("Число не соответствует требованию")
+    else:
+        remainder = int_numbers
+        if remainder == 0:
+            unit_digit = ZERO
+            only_unit_digit = True
+        else:
+            only_unit_digit = False
+
+
+#  --- разряд
+            digit = remainder % 1000
+#  --- остаток разрядов
+            remainder = remainder // 1000
+
+#  --- класс единиц
+            # род числа
+            digit_gender = "M"
+
+            # Begin блок определяющий разряд прописью
+            # промежуточная переменная для хранения числа прописью
+            temp_digit = ""
+            # добавка к числу
+            digit_addition_one = ""
+            digit_addition_two = ""
+            digit_addition_ten = ""
+            is_one = False
+            is_two = False
+
+            if 1 <= digit <= 999:
+                # сотни
+                digit_remainder = digit // 100
+                if digit_remainder == 1:
+                    temp_digit += HUNDRED
+                elif digit_remainder == 2:
+                    temp_digit += TWO_HUNDRED
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif 5 <= digit_remainder <= 9:
+                    if digit_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_remainder == 9:
+                        temp_digit += NINE
+                    temp_digit += HUNDREDS
+                if bool(temp_digit):
+                    temp_digit += " "
+
+                # десятки и единицы
+                digit_remainder = digit % 100
+                if 20 <= digit_remainder <= 99:
+                    digit_ten = digit_remainder // 10
+                    digit_ten_remainder = digit_remainder % 10
+                    if digit_ten == 2:
+                        temp_digit += TWENTY
+                    elif digit_ten == 3:
+                        temp_digit += THIRTY
+                    elif digit_ten == 4:
+                        temp_digit += FOURTY
+                    elif digit_ten == 5:
+                        temp_digit += FIFTY
+                    elif digit_ten == 6:
+                        temp_digit += SIXTY
+                    elif digit_ten == 7:
+                        temp_digit += SEVENTY
+                    elif digit_ten == 8:
+                        temp_digit += EIGHTY
+                    elif digit_ten == 9:
+                        temp_digit += NINETY
+                    #
+                    if digit_ten_remainder > 0:
+                        temp_digit += " "
+                    #
+                    if digit_ten_remainder == 1:
+                        if digit_gender == "M":
+                            temp_digit += ONE_M
+                        elif digit_gender == "F":
+                            temp_digit += ONE_F
+                        else:
+                            temp_digit += ONE_N
+                        is_one = True
+                    elif digit_ten_remainder == 2:
+                        if digit_gender == "M":
+                            temp_digit += TWO_M
+                        elif digit_gender == "F":
+                            temp_digit += TWO_F
+                        else:
+                            temp_digit += TWO_N
+                        is_two = True
+                    elif digit_ten_remainder == 3:
+                        temp_digit += TREE
+                        is_two = True
+                    elif digit_ten_remainder == 4:
+                        temp_digit += FOUR
+                        is_two = True
+                    elif digit_ten_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_ten_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_ten_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_ten_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_ten_remainder == 9:
+                        temp_digit += NINE
+                elif digit_remainder == 1:
+                    if digit_gender == "M":
+                        temp_digit += ONE_M
+                    elif digit_gender == "F":
+                        temp_digit += ONE_F
+                    else:
+                        temp_digit += ONE_N
+                    is_one = True
+                elif digit_remainder == 2:
+                    if digit_gender == "M":
+                        temp_digit += TWO_M
+                    elif digit_gender == "F":
+                        temp_digit += TWO_F
+                    else:
+                        temp_digit += TWO_N
+                    is_two = True
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    is_two = True
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    is_two = True
+                elif digit_remainder == 5:
+                    temp_digit += FIVE
+                elif digit_remainder == 6:
+                    temp_digit += SIX
+                elif digit_remainder == 7:
+                    temp_digit += SEVEN
+                elif digit_remainder == 8:
+                    temp_digit += EIGHT
+                elif digit_remainder == 9:
+                    temp_digit += NINE
+                elif digit_remainder == 10:
+                    temp_digit += TEN
+                elif digit_remainder == 11:
+                    temp_digit += ELEVEN
+                elif digit_remainder == 12:
+                    temp_digit += TWELVE
+                elif digit_remainder == 13:
+                    temp_digit += THIRTEEN
+                elif digit_remainder == 14:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 15:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 16:
+                    temp_digit += SIXTEEN
+                elif digit_remainder == 17:
+                    temp_digit += SEVENTEEN
+                elif digit_remainder == 18:
+                    temp_digit += EIGHTEEN
+                elif digit_remainder == 19:
+                    temp_digit += NINETEEN
+                temp_digit += " "
+                if is_one:
+                    temp_digit += digit_addition_one
+                elif is_two:
+                    temp_digit += digit_addition_two
+                else:
+                    temp_digit += digit_addition_ten
+            # End блок определяющий разряд прописью
+            unit_digit = temp_digit
+
+        if remainder > 0:
+            only_unit_digit = False
+
+#  --- разряд
+            digit = remainder % 1000
+#  --- остаток разрядов
+            remainder = remainder // 1000
+#  --- класс тысяч
+            digit_gender = "F"
+
+            # Begin блок определяющий разряд прописью
+            # промежуточная переменная для хранения числа прописью
+            temp_digit = ""
+            # добавка к числу
+            digit_addition_one = THOUSAND_ONE
+            digit_addition_two = THOUSAND_TWO
+            digit_addition_ten = THOUSAND_TEN
+            is_one = False
+            is_two = False
+
+            # разбор числа
+            if 1 <= digit <= 999:
+                # сотни
+                digit_remainder = digit // 100
+                if digit_remainder == 1:
+                    temp_digit += HUNDRED
+                elif digit_remainder == 2:
+                    temp_digit += TWO_HUNDRED
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif 5 <= digit_remainder <= 9:
+                    if digit_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_remainder == 9:
+                        temp_digit += NINE
+                    temp_digit += HUNDREDS
+                if bool(temp_digit):
+                    temp_digit += " "
+
+                # десятки и единицы
+                digit_remainder = digit % 100
+                if 20 <= digit_remainder <= 99:
+                    digit_ten = digit_remainder // 10
+                    digit_ten_remainder = digit_remainder % 10
+                    if digit_ten == 2:
+                        temp_digit += TWENTY
+                    elif digit_ten == 3:
+                        temp_digit += THIRTY
+                    elif digit_ten == 4:
+                        temp_digit += FOURTY
+                    elif digit_ten == 5:
+                        temp_digit += FIFTY
+                    elif digit_ten == 6:
+                        temp_digit += SIXTY
+                    elif digit_ten == 7:
+                        temp_digit += SEVENTY
+                    elif digit_ten == 8:
+                        temp_digit += EIGHTY
+                    elif digit_ten == 9:
+                        temp_digit += NINETY
+                    #
+                    if digit_ten_remainder > 0:
+                        temp_digit += " "
+                    #
+                    if digit_ten_remainder == 1:
+                        if digit_gender == "M":
+                            temp_digit += ONE_M
+                        elif digit_gender == "F":
+                            temp_digit += ONE_F
+                        else:
+                            temp_digit += ONE_N
+                        is_one = True
+                    elif digit_ten_remainder == 2:
+                        if digit_gender == "M":
+                            temp_digit += TWO_M
+                        elif digit_gender == "F":
+                            temp_digit += TWO_F
+                        else:
+                            temp_digit += TWO_N
+                        is_two = True
+                    elif digit_ten_remainder == 3:
+                        temp_digit += TREE
+                        is_two = True
+                    elif digit_ten_remainder == 4:
+                        temp_digit += FOUR
+                        is_two = True
+                    elif digit_ten_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_ten_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_ten_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_ten_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_ten_remainder == 9:
+                        temp_digit += NINE
+                elif digit_remainder == 1:
+                    if digit_gender == "M":
+                        temp_digit += ONE_M
+                    elif digit_gender == "F":
+                        temp_digit += ONE_F
+                    else:
+                        temp_digit += ONE_N
+                    is_one = True
+                elif digit_remainder == 2:
+                    if digit_gender == "M":
+                        temp_digit += TWO_M
+                    elif digit_gender == "F":
+                        temp_digit += TWO_F
+                    else:
+                        temp_digit += TWO_N
+                    is_two = True
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    is_two = True
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    is_two = True
+                elif digit_remainder == 5:
+                    temp_digit += FIVE
+                elif digit_remainder == 6:
+                    temp_digit += SIX
+                elif digit_remainder == 7:
+                    temp_digit += SEVEN
+                elif digit_remainder == 8:
+                    temp_digit += EIGHT
+                elif digit_remainder == 9:
+                    temp_digit += NINE
+                elif digit_remainder == 10:
+                    temp_digit += TEN
+                elif digit_remainder == 11:
+                    temp_digit += ELEVEN
+                elif digit_remainder == 12:
+                    temp_digit += TWELVE
+                elif digit_remainder == 13:
+                    temp_digit += THIRTEEN
+                elif digit_remainder == 14:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 15:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 16:
+                    temp_digit += SIXTEEN
+                elif digit_remainder == 17:
+                    temp_digit += SEVENTEEN
+                elif digit_remainder == 18:
+                    temp_digit += EIGHTEEN
+                elif digit_remainder == 19:
+                    temp_digit += NINETEEN
+                temp_digit += " "
+                if is_one:
+                    temp_digit += digit_addition_one
+                elif is_two:
+                    temp_digit += digit_addition_two
+                else:
+                    temp_digit += digit_addition_ten
+            # End блок определяющий разряд прописью
+            thousand_digit = temp_digit
+
+#  --- разряд
+            digit = remainder % 1000
+#  --- остаток разрядов
+            remainder = remainder // 1000
+#  --- класс миллионов
+            digit_gender = "M"
+            # Begin блок определяющий разряд прописью
+            # промежуточная переменная для хранения числа прописью
+            temp_digit = ""
+            # добавка к числу
+            digit_addition_one = MILLION_ONE
+            digit_addition_two = MILLION_TWO
+            digit_addition_ten = MILLION_TEN
+            is_one = False
+            is_two = False
+
+            # разбор числа
+            if 1 <= digit <= 999:
+                # сотни
+                digit_remainder = digit // 100
+                if digit_remainder == 1:
+                    temp_digit += HUNDRED
+                elif digit_remainder == 2:
+                    temp_digit += TWO_HUNDRED
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif 5 <= digit_remainder <= 9:
+                    if digit_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_remainder == 9:
+                        temp_digit += NINE
+                    temp_digit += HUNDREDS
+                if bool(temp_digit):
+                    temp_digit += " "
+
+                # десятки и единицы
+                digit_remainder = digit % 100
+                if 20 <= digit_remainder <= 99:
+                    digit_ten = digit_remainder // 10
+                    digit_ten_remainder = digit_remainder % 10
+                    if digit_ten == 2:
+                        temp_digit += TWENTY
+                    elif digit_ten == 3:
+                        temp_digit += THIRTY
+                    elif digit_ten == 4:
+                        temp_digit += FOURTY
+                    elif digit_ten == 5:
+                        temp_digit += FIFTY
+                    elif digit_ten == 6:
+                        temp_digit += SIXTY
+                    elif digit_ten == 7:
+                        temp_digit += SEVENTY
+                    elif digit_ten == 8:
+                        temp_digit += EIGHTY
+                    elif digit_ten == 9:
+                        temp_digit += NINETY
+                    #
+                    if digit_ten_remainder > 0:
+                        temp_digit += " "
+                    #
+                    if digit_ten_remainder == 1:
+                        if digit_gender == "M":
+                            temp_digit += ONE_M
+                        elif digit_gender == "F":
+                            temp_digit += ONE_F
+                        else:
+                            temp_digit += ONE_N
+                        is_one = True
+                    elif digit_ten_remainder == 2:
+                        if digit_gender == "M":
+                            temp_digit += TWO_M
+                        elif digit_gender == "F":
+                            temp_digit += TWO_F
+                        else:
+                            temp_digit += TWO_N
+                        is_two = True
+                    elif digit_ten_remainder == 3:
+                        temp_digit += TREE
+                        is_two = True
+                    elif digit_ten_remainder == 4:
+                        temp_digit += FOUR
+                        is_two = True
+                    elif digit_ten_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_ten_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_ten_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_ten_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_ten_remainder == 9:
+                        temp_digit += NINE
+                elif digit_remainder == 1:
+                    if digit_gender == "M":
+                        temp_digit += ONE_M
+                    elif digit_gender == "F":
+                        temp_digit += ONE_F
+                    else:
+                        temp_digit += ONE_N
+                    is_one = True
+                elif digit_remainder == 2:
+                    if digit_gender == "M":
+                        temp_digit += TWO_M
+                    elif digit_gender == "F":
+                        temp_digit += TWO_F
+                    else:
+                        temp_digit += TWO_N
+                    is_two = True
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    is_two = True
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    is_two = True
+                elif digit_remainder == 5:
+                    temp_digit += FIVE
+                elif digit_remainder == 6:
+                    temp_digit += SIX
+                elif digit_remainder == 7:
+                    temp_digit += SEVEN
+                elif digit_remainder == 8:
+                    temp_digit += EIGHT
+                elif digit_remainder == 9:
+                    temp_digit += NINE
+                elif digit_remainder == 10:
+                    temp_digit += TEN
+                elif digit_remainder == 11:
+                    temp_digit += ELEVEN
+                elif digit_remainder == 12:
+                    temp_digit += TWELVE
+                elif digit_remainder == 13:
+                    temp_digit += THIRTEEN
+                elif digit_remainder == 14:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 15:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 16:
+                    temp_digit += SIXTEEN
+                elif digit_remainder == 17:
+                    temp_digit += SEVENTEEN
+                elif digit_remainder == 18:
+                    temp_digit += EIGHTEEN
+                elif digit_remainder == 19:
+                    temp_digit += NINETEEN
+                temp_digit += " "
+                if is_one:
+                    temp_digit += digit_addition_one
+                elif is_two:
+                    temp_digit += digit_addition_two
+                else:
+                    temp_digit += digit_addition_ten
+            # End блок определяющий разряд прописью
+            million_digit = temp_digit
+
+#  --- разряд
+            digit = remainder % 1000
+#  --- остаток разрядов
+            remainder = remainder // 1000
+#  --- класс миллиардов
+            digit_gender = "M"
+            # Begin блок определяющий разряд прописью
+            # промежуточная переменная для хранения числа прописью
+            temp_digit = ""
+            # добавка к числу
+            digit_addition_one = BILLION_ONE
+            digit_addition_two = BILLION_TWO
+            digit_addition_ten = BILLION_TEN
+            is_one = False
+            is_two = False
+
+            # разбор числа
+            if 1 <= digit <= 999:
+                # сотни
+                digit_remainder = digit // 100
+                if digit_remainder == 1:
+                    temp_digit += HUNDRED
+                elif digit_remainder == 2:
+                    temp_digit += TWO_HUNDRED
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif 5 <= digit_remainder <= 9:
+                    if digit_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_remainder == 9:
+                        temp_digit += NINE
+                    temp_digit += HUNDREDS
+                if bool(temp_digit):
+                    temp_digit += " "
+
+                # десятки и единицы
+                digit_remainder = digit % 100
+                if 20 <= digit_remainder <= 99:
+                    digit_ten = digit_remainder // 10
+                    digit_ten_remainder = digit_remainder % 10
+                    if digit_ten == 2:
+                        temp_digit += TWENTY
+                    elif digit_ten == 3:
+                        temp_digit += THIRTY
+                    elif digit_ten == 4:
+                        temp_digit += FOURTY
+                    elif digit_ten == 5:
+                        temp_digit += FIFTY
+                    elif digit_ten == 6:
+                        temp_digit += SIXTY
+                    elif digit_ten == 7:
+                        temp_digit += SEVENTY
+                    elif digit_ten == 8:
+                        temp_digit += EIGHTY
+                    elif digit_ten == 9:
+                        temp_digit += NINETY
+                    #
+                    if digit_ten_remainder > 0:
+                        temp_digit += " "
+                    #
+                    if digit_ten_remainder == 1:
+                        if digit_gender == "M":
+                            temp_digit += ONE_M
+                        elif digit_gender == "F":
+                            temp_digit += ONE_F
+                        else:
+                            temp_digit += ONE_N
+                        is_one = True
+                    elif digit_ten_remainder == 2:
+                        if digit_gender == "M":
+                            temp_digit += TWO_M
+                        elif digit_gender == "F":
+                            temp_digit += TWO_F
+                        else:
+                            temp_digit += TWO_N
+                        is_two = True
+                    elif digit_ten_remainder == 3:
+                        temp_digit += TREE
+                        is_two = True
+                    elif digit_ten_remainder == 4:
+                        temp_digit += FOUR
+                        is_two = True
+                    elif digit_ten_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_ten_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_ten_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_ten_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_ten_remainder == 9:
+                        temp_digit += NINE
+                elif digit_remainder == 1:
+                    if digit_gender == "M":
+                        temp_digit += ONE_M
+                    elif digit_gender == "F":
+                        temp_digit += ONE_F
+                    else:
+                        temp_digit += ONE_N
+                    is_one = True
+                elif digit_remainder == 2:
+                    if digit_gender == "M":
+                        temp_digit += TWO_M
+                    elif digit_gender == "F":
+                        temp_digit += TWO_F
+                    else:
+                        temp_digit += TWO_N
+                    is_two = True
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    is_two = True
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    is_two = True
+                elif digit_remainder == 5:
+                    temp_digit += FIVE
+                elif digit_remainder == 6:
+                    temp_digit += SIX
+                elif digit_remainder == 7:
+                    temp_digit += SEVEN
+                elif digit_remainder == 8:
+                    temp_digit += EIGHT
+                elif digit_remainder == 9:
+                    temp_digit += NINE
+                elif digit_remainder == 10:
+                    temp_digit += TEN
+                elif digit_remainder == 11:
+                    temp_digit += ELEVEN
+                elif digit_remainder == 12:
+                    temp_digit += TWELVE
+                elif digit_remainder == 13:
+                    temp_digit += THIRTEEN
+                elif digit_remainder == 14:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 15:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 16:
+                    temp_digit += SIXTEEN
+                elif digit_remainder == 17:
+                    temp_digit += SEVENTEEN
+                elif digit_remainder == 18:
+                    temp_digit += EIGHTEEN
+                elif digit_remainder == 19:
+                    temp_digit += NINETEEN
+                temp_digit += " "
+                if is_one:
+                    temp_digit += digit_addition_one
+                elif is_two:
+                    temp_digit += digit_addition_two
+                else:
+                    temp_digit += digit_addition_ten
+            # End блок определяющий разряд прописью
+            billion_digit = temp_digit
+
+#  --- разряд
+            digit = remainder % 1000
+#  --- остаток разрядов
+            remainder = remainder // 1000
+#  --- класс триллионов
+            digit_gender = "M"
+            # Begin блок определяющий разряд прописью
+            # промежуточная переменная для хранения числа прописью
+            temp_digit = ""
+            # добавка к числу
+            digit_addition_one = TRILLION_ONE
+            digit_addition_two = TRILLION_TWO
+            digit_addition_ten = TRILLION_TEN
+            is_one = False
+            is_two = False
+
+            # разбор числа
+            if 1 <= digit <= 999:
+                # сотни
+                digit_remainder = digit // 100
+                if digit_remainder == 1:
+                    temp_digit += HUNDRED
+                elif digit_remainder == 2:
+                    temp_digit += TWO_HUNDRED
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    temp_digit += TREE_FOUR_HUNDRED
+                elif 5 <= digit_remainder <= 9:
+                    if digit_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_remainder == 9:
+                        temp_digit += NINE
+                    temp_digit += HUNDREDS
+                if bool(temp_digit):
+                    temp_digit += " "
+
+                # десятки и единицы
+                digit_remainder = digit % 100
+                if 20 <= digit_remainder <= 99:
+                    digit_ten = digit_remainder // 10
+                    digit_ten_remainder = digit_remainder % 10
+                    if digit_ten == 2:
+                        temp_digit += TWENTY
+                    elif digit_ten == 3:
+                        temp_digit += THIRTY
+                    elif digit_ten == 4:
+                        temp_digit += FOURTY
+                    elif digit_ten == 5:
+                        temp_digit += FIFTY
+                    elif digit_ten == 6:
+                        temp_digit += SIXTY
+                    elif digit_ten == 7:
+                        temp_digit += SEVENTY
+                    elif digit_ten == 8:
+                        temp_digit += EIGHTY
+                    elif digit_ten == 9:
+                        temp_digit += NINETY
+                    #
+                    if digit_ten_remainder > 0:
+                        temp_digit += " "
+                    #
+                    if digit_ten_remainder == 1:
+                        if digit_gender == "M":
+                            temp_digit += ONE_M
+                        elif digit_gender == "F":
+                            temp_digit += ONE_F
+                        else:
+                            temp_digit += ONE_N
+                        is_one = True
+                    elif digit_ten_remainder == 2:
+                        if digit_gender == "M":
+                            temp_digit += TWO_M
+                        elif digit_gender == "F":
+                            temp_digit += TWO_F
+                        else:
+                            temp_digit += TWO_N
+                        is_two = True
+                    elif digit_ten_remainder == 3:
+                        temp_digit += TREE
+                        is_two = True
+                    elif digit_ten_remainder == 4:
+                        temp_digit += FOUR
+                        is_two = True
+                    elif digit_ten_remainder == 5:
+                        temp_digit += FIVE
+                    elif digit_ten_remainder == 6:
+                        temp_digit += SIX
+                    elif digit_ten_remainder == 7:
+                        temp_digit += SEVEN
+                    elif digit_ten_remainder == 8:
+                        temp_digit += EIGHT
+                    elif digit_ten_remainder == 9:
+                        temp_digit += NINE
+                elif digit_remainder == 1:
+                    if digit_gender == "M":
+                        temp_digit += ONE_M
+                    elif digit_gender == "F":
+                        temp_digit += ONE_F
+                    else:
+                        temp_digit += ONE_N
+                    is_one = True
+                elif digit_remainder == 2:
+                    if digit_gender == "M":
+                        temp_digit += TWO_M
+                    elif digit_gender == "F":
+                        temp_digit += TWO_F
+                    else:
+                        temp_digit += TWO_N
+                    is_two = True
+                elif digit_remainder == 3:
+                    temp_digit += TREE
+                    is_two = True
+                elif digit_remainder == 4:
+                    temp_digit += FOUR
+                    is_two = True
+                elif digit_remainder == 5:
+                    temp_digit += FIVE
+                elif digit_remainder == 6:
+                    temp_digit += SIX
+                elif digit_remainder == 7:
+                    temp_digit += SEVEN
+                elif digit_remainder == 8:
+                    temp_digit += EIGHT
+                elif digit_remainder == 9:
+                    temp_digit += NINE
+                elif digit_remainder == 10:
+                    temp_digit += TEN
+                elif digit_remainder == 11:
+                    temp_digit += ELEVEN
+                elif digit_remainder == 12:
+                    temp_digit += TWELVE
+                elif digit_remainder == 13:
+                    temp_digit += THIRTEEN
+                elif digit_remainder == 14:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 15:
+                    temp_digit += FIFTEEN
+                elif digit_remainder == 16:
+                    temp_digit += SIXTEEN
+                elif digit_remainder == 17:
+                    temp_digit += SEVENTEEN
+                elif digit_remainder == 18:
+                    temp_digit += EIGHTEEN
+                elif digit_remainder == 19:
+                    temp_digit += NINETEEN
+                temp_digit += " "
+                if is_one:
+                    temp_digit += digit_addition_one
+                elif is_two:
+                    temp_digit += digit_addition_two
+                else:
+                    temp_digit += digit_addition_ten
+            # End блок определяющий разряд прописью
+            trillion_digit = temp_digit
+
+    if only_unit_digit:
+        # выводим только разряд единиц
+        result_out = unit_digit
+    else:
+        # выводим все разряды если есть
+        if bool(trillion_digit):
+            result_out += trillion_digit
+            result_out += " "
+        if bool(billion_digit):
+            result_out += billion_digit
+            result_out += " "
+        if bool(million_digit):
+            result_out += million_digit
+            result_out += " "
+        if bool(thousand_digit):
+            result_out += thousand_digit
+            result_out += " "
+        result_out += unit_digit
+
+    # выводим полученный результат
+    print(f"Заданное число {str_numbers} пишется как: {result_out}")
