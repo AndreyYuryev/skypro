@@ -101,7 +101,7 @@ def create_words_list():
 
 def main():
     '''Основная программа'''
-    # words = ["test", "andrey", "word", "help", "pen"]
+    # words = ["may", "day", "boat", "help", "sos"]
     answers = list()
     words = list()
 
@@ -126,9 +126,11 @@ def main():
     # вывести статистику
     print_answers(answers)
 
+    # опционально - вывести слово по коду
     user_code = input("Введите код: ")
     word = morse_decode(user_code)
     print(word)
+
 
 if __name__ == '__main__':
     main()
