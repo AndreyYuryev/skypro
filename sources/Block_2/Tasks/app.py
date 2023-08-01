@@ -1,7 +1,7 @@
 from validators.validate_card import validate_card
 from validators.validate_pin import validate_pin
 
-print("Введите ваш номер карты")
+print('Введите ваш номер карты')
 card_number = input()
 print("Введите ваш ПИН-код")
 card_pin = input()
