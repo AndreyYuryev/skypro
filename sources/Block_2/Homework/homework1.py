@@ -39,7 +39,7 @@ def get_players(filename='history.txt'):
     with open(filename, 'r', encoding='utf-8') as file:
         for line in file:
             line_list = line.strip().split(':')
-            players_list[line_list[0]] = [line_list[1], line_list[2]]
+            players_list[line_list[0]] = [int(line_list[1]), int(line_list[2])]
     return players_list
 
 
@@ -65,7 +65,7 @@ def main():
     user_name = input("Введите ваше имя: ")
 
     # результаты игрока ранее
-    games, top_scores = players.get(user_name, [0, 0])
+    top_scores, games = players.get(user_name, [0, 0])
     score_counter = 0
 
     # блок угадывания слов
@@ -80,15 +80,16 @@ def main():
 
     # запись в топ игроков
     if int(top_scores) < score_counter:
-        players[user_name] = [int(games) + 1, score_counter]
+        players[user_name] = [int(score_counter), int(games) + 1]
     else:
-        players[user_name] = [int(games) + 1, top_scores]
-    set_players(players_list=players)
+        players[user_name] = [int(top_scores), int(games) + 1]
+
+    set_players(players_list=dict(sorted(players.items(), key=lambda x: x[1], reverse=True)))
 
     # вывод топа игроков
-    print("Top players")
+    print("-- Top players --")
     for key, value in players.items():
-        print(f"{key} {value[1]}")
+        print(f"Игрок {key}: очков - {value[0]}")
 
 
 if __name__ == '__main__':
