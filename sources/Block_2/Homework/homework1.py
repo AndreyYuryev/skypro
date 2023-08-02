@@ -6,7 +6,7 @@ def get_words(filename='words.txt'):
     Возвращает список слов полученный из файла
     '''
     words = []
-    with open(filename, 'r') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         for line in file:
             words.append(line.strip())
     return words
@@ -36,7 +36,7 @@ def get_players(filename='history.txt'):
     '''
     players_list = {}
     line_list = []
-    with open(filename, 'r') as file:
+    with open(filename, 'r', encoding='utf-8') as file:
         for line in file:
             line_list = line.strip().split(':')
             players_list[line_list[0]] = [line_list[1], line_list[2]]
@@ -47,7 +47,7 @@ def set_players(filename='history.txt', players_list={}):
     '''
     Сохраняет топ игроков в файл
     '''
-    with open(filename, 'w') as file:
+    with open(filename, 'w', encoding='utf-8') as file:
         for keys, value in players_list.items():
             file.write(f"{keys}:{value[0]}:{value[1]}\n")
 
