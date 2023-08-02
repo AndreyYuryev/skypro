@@ -57,13 +57,18 @@ def main():
     '''
     Основная программа
     '''
+    # список результатов игроков
     players = get_players()
+    # список слов
     words = get_words()
 
     user_name = input("Введите ваше имя: ")
+
+    # результаты игрока ранее
     games, top_scores = players.get(user_name, [0, 0])
     score_counter = 0
 
+    # блок угадывания слов
     for attempt in range(len(words)):
         word = get_random_word(words)
         user_answer = input(f"Угадайте слово: {get_mixed_word(word)}: ")
@@ -73,12 +78,14 @@ def main():
         else:
             print(f"Неверно! Верный ответ – {word}.")
 
+    # запись в топ игроков
     if int(top_scores) < score_counter:
         players[user_name] = [int(games) + 1, score_counter]
     else:
         players[user_name] = [int(games) + 1, top_scores]
     set_players(players_list=players)
 
+    # вывод топа игроков
     print("Top players")
     for key, value in players.items():
         print(f"{key} {value[1]}")
