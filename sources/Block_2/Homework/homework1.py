@@ -52,7 +52,6 @@ def set_players(filename='history.txt', players_list={}):
             file.write(f"{keys}:{value[0]}:{value[1]}\n")
 
 
-
 def main():
     '''
     Основная программа
@@ -89,6 +88,7 @@ def main():
     print("Top players")
     for key, value in players.items():
         print(f"{key} {value[1]}")
+
 
 if __name__ == '__main__':
     main()
