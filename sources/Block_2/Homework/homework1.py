@@ -66,7 +66,7 @@ def main():
 
     for attempt in range(len(words)):
         word = get_random_word(words)
-        user_answer = input(f"Угадайте слово: {get_mixed_word(word)}")
+        user_answer = input(f"Угадайте слово: {get_mixed_word(word)}: ")
         if user_answer == word:
             print("Верно! Вы получаете 10 очков.")
             score_counter += 10
@@ -79,6 +79,7 @@ def main():
         players[user_name] = [int(games) + 1, top_scores]
     set_players(players_list=players)
 
+    print("Top players")
     for key, value in players.items():
         print(f"{key} {value[1]}")
 
