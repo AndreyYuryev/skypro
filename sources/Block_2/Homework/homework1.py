@@ -46,6 +46,7 @@ def get_players(filename='history.txt'):
 def set_players(filename='history.txt', players_list={}):
     '''
     Сохраняет топ игроков в файл
+    Имя игрока:количество игр:максимальное количество очков
     '''
     with open(filename, 'w', encoding='utf-8') as file:
         for keys, value in players_list.items():
