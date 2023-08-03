@@ -83,8 +83,8 @@ def main():
         players[user_name] = [int(score_counter), int(games) + 1]
     else:
         players[user_name] = [int(top_scores), int(games) + 1]
-
-    set_players(players_list=dict(sorted(players.items(), key=lambda x: x[1], reverse=True)))
+    #ss = players_list=dict(sorted(players.items(), key=lambda item: item[1][1], reverse=True))
+    set_players(players_list=dict(sorted(players.items(), key=lambda item: item[1][0], reverse=True)))
 
     # вывод топа игроков
     print("-- Top players --")
