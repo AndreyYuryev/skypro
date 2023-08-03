@@ -9,3 +9,16 @@ def test_check_pin():
     assert not check_pin("123")
     assert not check_pin("a000")
     assert check_pin("0000")
+
+
+if __name__ == "__main__":
+    print("test_pin")
+    try:
+        assert check_pin("1234")
+        assert not check_pin("123")
+        assert not check_pin("a000")
+        assert check_pin("0000")
+    except AssertionError:
+        print("Неверно, проверьте функцию на разных значениях")
+    else:
+        print("Все хорошо, все работает")
