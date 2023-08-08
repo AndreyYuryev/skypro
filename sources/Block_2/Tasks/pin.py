@@ -11,8 +11,11 @@ def test_check_pin():
     assert check_pin("0000")
 
 
+print("Печатается всегда - pin.py")
+
+
 if __name__ == "__main__":
-    print("test_pin")
+    print("Печатается только при запуске pin.py")
     try:
         assert check_pin("1234")
         assert not check_pin("123")
