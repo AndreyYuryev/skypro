@@ -14,7 +14,7 @@ def get_student_by_pk(pk):
     '''
     students_list = load_students(os.path.join(DIRRECTORY, 'students.json'))
     for student in students_list:
-        if student.get('pk') == str(pk):
+        if str(student.get('pk')) == str(pk):
             return student
             break
     else:
@@ -29,20 +29,23 @@ def get_profession_by_title(title):
     '''
     professions_list = load_professions(os.path.join(DIRRECTORY, 'professions.json'))
     for professions in professions_list:
-        if professions.get('title') == str(title):
+        if str(professions.get('title')).lower() == str(title).lower():
             return professions
             break
     else:
         return None
 
 
-def get_suitability(student_info, skills_info):
+def check_fitness(student_info, professions_info):
+    '''
+    Проверить подходят ли навыки студента для выбранной специальности
+    '''
     student_skills = set(student_info['skills'])
-    professions_skills = set(skills_info['skills'])
+    professions_skills = set(professions_info['skills'])
     has = list(student_skills.intersection(professions_skills))
     like = list(professions_skills.difference(student_skills))
-    percentage = len(has) / len(professions_skills) * 100
-    return percentage, has, like
+    percentage = round(len(has) / len(professions_skills) * 100)
+    return dict(has=has, like=like, fit_percent=percentage)
 
 
 def _student_full_name(student_info):
@@ -56,7 +59,7 @@ def _student_skills(student_info):
     '''
     Вернуть строку с навыками студента
     '''
-    return " ".join(student_info['skills'])
+    return ", ".join(student_info['skills'])
 
 
 def _speciality_title(speciality_info):
@@ -87,10 +90,10 @@ def main():
         return None
     print(f"{_speciality_title(speciality)}")
 
-    student_suitability, known, unknown = get_suitability(student_info=student, skills_info=speciality)
-    skills_known = " ".join(known)
-    skills_unknown = " ".join(unknown)
-    print(f"Пригодность {student_suitability}%")
+    suitable_result = check_fitness(student_info=student, professions_info=speciality)
+    skills_known = " ".join(suitable_result['has'])
+    skills_unknown = " ".join(suitable_result['like'])
+    print(f"Пригодность {suitable_result['fit_percent']}%")
     print(f"{_student_full_name(student)} знает {skills_known}")
     print(f"{_student_full_name(student)} не знает {skills_unknown}")
 
