@@ -4,6 +4,8 @@ from utils import load_students, load_professions
 
 # имя дирректории с JSON файлами
 DIRRECTORY = 'homework2_data'
+STUDENTS_FILE = 'students.json'
+PROFESSIONS_FILE = 'professions.json'
 
 
 def get_student_by_pk(pk):
@@ -12,7 +14,7 @@ def get_student_by_pk(pk):
     возвращает словарь с описанием выбранного студента или None
     если студента с таким номером не найдено
     '''
-    students_list = load_students(os.path.join(DIRRECTORY, 'students.json'))
+    students_list = load_students(os.path.join(DIRRECTORY, STUDENTS_FILE))
     for student in students_list:
         if str(student.get('pk')) == str(pk):
             return student
@@ -27,7 +29,7 @@ def get_profession_by_title(title):
     возвращает словарь с описанием выбранной профессии или None
     если профессии с таким названием не найдено
     '''
-    professions_list = load_professions(os.path.join(DIRRECTORY, 'professions.json'))
+    professions_list = load_professions(os.path.join(DIRRECTORY, PROFESSIONS_FILE))
     for professions in professions_list:
         if str(professions.get('title')).lower() == str(title).lower():
             return professions
