@@ -8,3 +8,5 @@ Jesus:30:1
 Andrey:20:1
 andrey:10:6
 dd:10:1
+andr:10:1
+d:0:1

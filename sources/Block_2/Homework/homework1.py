@@ -28,7 +28,7 @@ def get_mixed_word(in_word):
     return "".join(word_list)
 
 
-def get_players(filename='history.txt'):
+def get_players(filename: str = 'history.txt') -> dict:
     '''
     Функция возвращает список игроков с количеством игр и количеством набранных очков
     в виде словаря
@@ -43,7 +43,7 @@ def get_players(filename='history.txt'):
     return players_list
 
 
-def set_players(filename='history.txt', players_list={}):
+def set_players(filename: str = 'history.txt', players_list: dict = {}) -> None:
     '''
     Сохраняет топ игроков в файл
     Имя игрока:количество игр:максимальное количество очков
@@ -53,7 +53,7 @@ def set_players(filename='history.txt', players_list={}):
             file.write(f"{keys}:{value[0]}:{value[1]}\n")
 
 
-def main():
+def main() -> None:
     '''
     Основная программа
     '''
@@ -83,7 +83,7 @@ def main():
         players[user_name] = [int(score_counter), int(games) + 1]
     else:
         players[user_name] = [int(top_scores), int(games) + 1]
-    #ss = players_list=dict(sorted(players.items(), key=lambda item: item[1][1], reverse=True))
+    # ss = players_list=dict(sorted(players.items(), key=lambda item: item[1][1], reverse=True))
     set_players(players_list=dict(sorted(players.items(), key=lambda item: item[1][0], reverse=True)))
 
     # вывод топа игроков
