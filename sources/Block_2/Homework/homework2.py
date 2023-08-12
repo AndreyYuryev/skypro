@@ -18,9 +18,6 @@ def get_student_by_pk(pk):
     for student in students_list:
         if str(student.get('pk')) == str(pk):
             return student
-            break
-    else:
-        return None
 
 
 def get_profession_by_title(title):
@@ -33,9 +30,6 @@ def get_profession_by_title(title):
     for professions in professions_list:
         if str(professions.get('title')).lower() == str(title).lower():
             return professions
-            break
-    else:
-        return None
 
 
 def check_fitness(student_info, professions_info):
@@ -69,6 +63,7 @@ def _speciality_title(speciality_info):
     Вернуть название специальности
     '''
     return speciality_info['title']
+
 
 def main():
     '''
