@@ -1,4 +1,4 @@
-from pin import check_pin
+from Lesson_6_1.pin import check_pin
 
 
 user_input = input("Введите ваш ПИН-код: ")
