@@ -1,4 +1,12 @@
-class Hero():
+class Character:
+    def __init__(self):
+        pass
+
+    def move(self, direction, distance):
+        pass
+
+
+class Hero(Character):
 
   def __init__(self, name):
     self.name = name
@@ -17,7 +25,7 @@ class Hero():
       print(self.name, "движется непонятно куда")
 
 
-class Enemy():
+class Enemy(Character):
 
   def __init__(self, name):
     self.name = name
