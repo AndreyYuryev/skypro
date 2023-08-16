@@ -1,13 +1,57 @@
 import json
 import random
+import os
 
 QUESTIONS_FILE = 'questions.json'
 
 
+def print_statistic(questions):
+    '''
+    распечатать статистику на основе списка объектов
+    '''
+    if not questions:
+        return
+    print("Вот и все!")
+    asked = 0
+    score = 0
+    correct_answer = 0
+    for question in questions:
+        if question.asked:
+            asked += 1
+        if question.correct_answer:
+            correct_answer += 1
+            score += question.get_points()
+    print(f"Отвечено {correct_answer} вопроса из {asked}")
+    print(f"Набранно {score} баллов")
+
+
+def prepare_questions(filename='questions.json'):
+    '''
+    Возвращает перемешанный список объектов типа вопрос
+    '''
+    questions = []
+    question_list = load_questions(filename)
+    if question_list is not None:
+        for question in question_list:
+            questions.append(Question(question['q'], question['a'], question['d']))
+        random.shuffle(questions)
+    return questions
+
+
+def load_questions(filename='questions.json'):
+    '''
+    Читает из файла JSON с описанием вопросов и возвращает в виде словаря
+    '''
+    if os.path.exists(filename):
+        with open(file=filename, encoding='utf-8', mode='r') as file:
+            questions_data = json.load(file)
+        return questions_data
+
+
 class Questioner:
-    def __init__(self, filename):
+    def __init__(self, questions):
         self._greetings()
-        self.questions = self._prepare_questions(filename)
+        self.questions = questions
 
     def _greetings(self):
         '''
@@ -15,49 +59,22 @@ class Questioner:
         '''
         print("Игра начинается!")
 
-    def _prepare_questions(self, filename):
+    def _question_list_empty(self):
         '''
-        Возвращает перемешанный список объектов типа вопрос
+        Список вопросов пустой
         '''
-        questions = []
-        question_list = self._load_questions(filename)
-        for question in question_list:
-            questions.append(Question(question['q'], question['a'], question['d']))
-        random.shuffle(questions)
-        return questions
-
-    def _load_questions(self, filename='questions.json'):
-        '''
-        Читает из файла JSON с описанием вопросов и возвращает в виде словаря
-        '''
-        with open(file=filename, encoding='utf-8', mode='r') as file:
-            questions_data = json.load(file)
-        return questions_data
-
-    def print_statistic(self):
-        '''
-        распечатать статистику
-        '''
-        print("Вот и все!")
-        asked = 0
-        score = 0
-        correct_answer = 0
-        for question in self.questions:
-            if question.asked:
-                asked += 1
-            if question.correct_answer:
-                correct_answer += 1
-                score += question.get_points()
-        print(f"Отвечено {correct_answer} вопроса из {asked}")
-        print(f"Набранно {score} баллов")
+        print("Список вопросов пуст, проверьте файл с вопросами")
 
     def ask(self):
         '''
         Задает вопрос и обрабатывает ответы
         '''
-        for question in self.questions:
-            print(question.build_question())
-            print(question.build_feedback(input()))
+        if not self.questions:
+            self._question_list_empty()
+        else:
+            for question in self.questions:
+                print(question.build_question())
+                print(question.build_feedback(input()))
 
 
 class Question:
@@ -115,9 +132,9 @@ def main():
     '''
     основной алгоритм вопросов - ответов
     '''
-    questioner = Questioner(QUESTIONS_FILE)
+    questioner = Questioner(prepare_questions(QUESTIONS_FILE))
     questioner.ask()
-    questioner.print_statistic()
+    print_statistic(questioner.questions)
 
 
 if __name__ == '__main__':
