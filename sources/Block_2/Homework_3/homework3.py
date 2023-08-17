@@ -76,6 +76,9 @@ class Questioner:
                 print(question.build_question())
                 print(question.build_feedback(input()))
 
+    def __repr__(self):
+        print("Объект типа Задаватель вопросов")
+
 
 class Question:
     '''
@@ -126,6 +129,9 @@ class Question:
         if self.is_correct(user_answer):
             return f"Ответ верный, получено {self.get_points()} баллов"
         return f"Ответ неверный. Верный ответ - {self.answer}"
+
+    def __repr__(self):
+        print("Объект типа вопрос")
 
 
 def main():
