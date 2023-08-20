@@ -3,7 +3,6 @@ import json
 import urllib3
 
 
-
 class BasicWord:
     pass
 
