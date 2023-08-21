@@ -2,7 +2,9 @@ from utils import load_random_word
 from basic import BasicWord
 from player import Player
 
-URL_JSON = 'https://jsonkeeper.com/b/LJHI'
+# URL_JSON = 'https://jsonkeeper.com/b/LJHI'
+# URL_JSON = 'https://jsonkeeper.com/b/83EQ'
+URL_JSON = 'https://api.npoint.io/e895493bd4c4b8f1209c'
 
 
 def main():
@@ -12,6 +14,8 @@ def main():
     player = Player(input("Введите имя пользователя:"))
     print(f"Привет, {player.user_name}")
 
+    # Если адрес на jsonkeeper.com то параметр jsonkeeper=True
+    # word_list = load_random_word(URL_JSON, jsonkeeper=True)
     word_list = load_random_word(URL_JSON)
     word = BasicWord(word=word_list.get('word'), anagrams=word_list.get('subwords'))
     if word.is_empty():
