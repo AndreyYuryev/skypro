@@ -21,11 +21,11 @@ def main():
     print(f"Составьте {word.count_words()} слов из слова '{word.word}'")
     # print(repr(word))
     print(f"Слова должны быть не короче 3 букв")
-    print(f"Чтобы закончить игру угадайте все слова или напишите 'стоп'")
+    print(f"Чтобы закончить игру угадайте все слова или напишите 'стоп' или 'stop'")
     print("Поехали, ваше первое слово?")
     while True:
         user_word = input()
-        if user_word == 'стоп':
+        if user_word == 'стоп' or user_word == 'stop':
             print("Статистика:")
             break
         if len(user_word) < 3:
