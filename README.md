@@ -7,8 +7,8 @@
 <summary>
 Курс 1 https://github.com/AndreyYuryev/skypro/sources/Block_1
 </summary>
-+ [Курсовая работа 1] https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
-+ [Домашняя работа 1] https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
+- [Курсовая работа 1] 
+- [Домашняя работа 1] 
 </details>
 <details>
 <summary>
@@ -17,6 +17,10 @@
     + Курсовая работа https://github.com/AndreyYuryev/skypro/sources/Block_2/Coursework
     + Домашняя работа https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework
 </details>
+
+
+- [Курсовая работа 1] 
+- [Домашняя работа 1] 
 
 ## Getting Started
 
