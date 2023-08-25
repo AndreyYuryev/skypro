@@ -4,27 +4,31 @@
 
 ## Содержание репозитория
 [1. Введение в программирование][Курс 1]
-<details>
-<summary>Исходники</summary>
-
-- [Курсовая работа 1] 
+- [Курсовая работа _Азбука Морзе_][Курсовая работа 1] 
 - [Домашняя работа 1] 
 
-</details>
-
 [2. Основы программирования][Курс 2]
-<details>
-<summary>Исходники</summary>
-
-- [Курсовая работа 2]
+- [Курсовая работа _Анаграммы_][Курсовая работа 2]
 - [Домашняя работа 2.1] 
 - [Домашняя работа 2.2]
 - [Домашняя работа 2.3]
+- [Урок 6.1 IDE и установка Python. Файлы][L61]
+- [Урок 7.1 Погружение: коллекции и вложенность][L71]
+- [Урок 7.2 Погружение: коллекции и вложенность][L72]
+- [Урок 8.1 Основы абстракций и объектов][L81]
+- [Урок 8.2 Основы абстракций и объектов][L82]
+
+<!--
+<details>
+<summary>Исходники</summary>
+Ссылки на источники
 
 </details>
+-->
 
 > [!NOTE]
 > Все что следует ниже является копией шаблона README.md и будет в дальнейшем изменено
+
 <!--
 ## Getting Started
 
@@ -122,5 +126,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [Домашняя работа 2.1]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework_1
 [Домашняя работа 2.2]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework_2
 [Домашняя работа 2.3]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework_3
-
-
+[L61]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Lesson_6_1
+[L71]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Lesson_7_1
+[L72]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Lesson_7_1
+[L81]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Lesson_8_1
+[L82]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Lesson_8_2
