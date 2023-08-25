@@ -7,8 +7,8 @@
 <summary>
 Курс 1 https://github.com/AndreyYuryev/skypro/sources/Block_1
 </summary>
-+ Курсовая работа https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
-+ Домашняя работа https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
++ [Курсовая работа 1] https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
++ [Домашняя работа 1] https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
 </details>
 <details>
 <summary>
@@ -101,3 +101,6 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Hat tip to anyone whose code was used
 * Inspiration
 * etc
+
+[Курсовая работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
+[Домашняя работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
