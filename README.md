@@ -126,20 +126,21 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 [//]: #ссылки
 
-[Курс 1]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_1
-[Курс 2]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2
-[Курс 3]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_3
+[Курс 1]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_1
+[Курс 2]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2
+[Курс 3]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_3
 
 
 
-[Курсовая работа 1]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_1/Coursework
-[Домашняя работа 1]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_1/Homework
-[Курсовая работа 2]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Coursework
-[Домашняя работа 2.1]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Homework_1
-[Домашняя работа 2.2]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Homework_2
-[Домашняя работа 2.3]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Homework_3
-[L61]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Lesson_6_1
-[L71]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Lesson_7_1
-[L72]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Lesson_7_1
-[L81]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Lesson_8_1
-[L82]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_2/Lesson_8_2
+[Курсовая работа 1]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_1/Coursework
+[Домашняя работа 1]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_1/Homework
+[Курсовая работа 2]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Coursework
+[Домашняя работа 2.1]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Homework_1
+[Домашняя работа 2.2]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Homework_2
+[Домашняя работа 2.3]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Homework_3
+[L61]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Lesson_6_1
+[L71]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Lesson_7_1
+[L72]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Lesson_7_1
+[L81]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Lesson_8_1
+[L82]: https://github.com/AndreyYuryev/skypro/tree/2323fc69ca4cb70d4c2b3d3fbd59ce8c38069826/sources/Block_2/Lesson_8_2
+
