@@ -17,7 +17,9 @@
 <summary>Исходники</summary>
 
 - [Курсовая работа 2]
-- [Домашняя работа 2] 
+- [Домашняя работа 2.1] 
+- [Домашняя работа 2.2]
+- [Домашняя работа 2.3]
 
 </details>
 
@@ -114,6 +116,8 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [Курсовая работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
 [Домашняя работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
 [Курсовая работа 2]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Coursework
-[Домашняя работа 2]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework
+[Домашняя работа 2.1]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework_1
+[Домашняя работа 2.2]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework_2
+[Домашняя работа 2.3]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework_3
 
 
