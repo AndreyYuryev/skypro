@@ -120,7 +120,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 [Курс 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1
 [Курс 2]: https://github.com/AndreyYuryev/skypro/sources/Block_2
 
-[Курсовая работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
+[Курсовая работа 1]: https://github.com/AndreyYuryev/skypro/tree/56c3c015982c52446adec4f1d33954e73c79b9da/sources/Block_1/Coursework
 [Домашняя работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
 [Курсовая работа 2]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Coursework
 [Домашняя работа 2.1]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework_1
