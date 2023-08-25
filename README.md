@@ -1,7 +1,22 @@
-![skypro](skypro.PNG)
-
-# skypro
+![](skypro.PNG) 
+# skypro - 28 поток
 Репозитарий исходных кодов курса SkyPro - `Профессия Python разработчик 3.0`
+
+## Содержание репозитория
+<details>
+<summary>
+Курс 1 https://github.com/AndreyYuryev/skypro/sources/Block_1
+</summary>
+    + Курсовая работа https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
+    + Домашняя работа https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
+</details>
+<details>
+<summary>
+Курс 2 https://github.com/AndreyYuryev/skypro/sources/Block_2
+</summary>
+    + Курсовая работа https://github.com/AndreyYuryev/skypro/sources/Block_2/Coursework
+    + Домашняя работа https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework
+</details>
 
 ## Getting Started
 
