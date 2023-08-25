@@ -3,24 +3,24 @@
 Репозитарий исходных кодов курса SkyPro - `Профессия Python разработчик 3.0`
 
 ## Содержание репозитория
+[1. Введение в программирование][Курс 1]
 <details>
-<summary>
-Курс 1 https://github.com/AndreyYuryev/skypro/sources/Block_1
-</summary>
-- [Курсовая работа 1] 
-- [Домашняя работа 1] 
-</details>
-<details>
-<summary>
-Курс 2 https://github.com/AndreyYuryev/skypro/sources/Block_2
-</summary>
-    + Курсовая работа https://github.com/AndreyYuryev/skypro/sources/Block_2/Coursework
-    + Домашняя работа https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework
-</details>
-
+<summary>Исходники</summary>
 
 - [Курсовая работа 1] 
 - [Домашняя работа 1] 
+
+</details>
+
+[2. Основы программирования][Курс 2]
+<details>
+<summary>Исходники</summary>
+
+- [Курсовая работа 2]
+- [Домашняя работа 2] 
+
+</details>
+
 
 ## Getting Started
 
@@ -106,5 +106,14 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 * Inspiration
 * etc
 
+[//]: #ссылки
+
+[Курс 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1
+[Курс 2]: https://github.com/AndreyYuryev/skypro/sources/Block_2
+
 [Курсовая работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
 [Домашняя работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
+[Курсовая работа 2]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Coursework
+[Домашняя работа 2]: https://github.com/AndreyYuryev/skypro/sources/Block_2/Homework
+
+
