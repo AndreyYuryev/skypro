@@ -7,8 +7,8 @@
 <summary>
 Курс 1 https://github.com/AndreyYuryev/skypro/sources/Block_1
 </summary>
-    + Курсовая работа https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
-    + Домашняя работа https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
++ Курсовая работа https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
++ Домашняя работа https://github.com/AndreyYuryev/skypro/sources/Block_1/Homework
 </details>
 <details>
 <summary>
