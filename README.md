@@ -117,7 +117,7 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 [//]: #ссылки
 
-[Курс 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1
+[Курс 1]: https://github.com/AndreyYuryev/skypro/blob/sources/Block_1
 [Курс 2]: https://github.com/AndreyYuryev/skypro/sources/Block_2
 
 [Курсовая работа 1]: https://github.com/AndreyYuryev/skypro/sources/Block_1/Coursework
