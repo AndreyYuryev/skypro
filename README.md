@@ -1,4 +1,4 @@
-![skypro](https://my.sky.pro/5987ea2b7acbe5e5379157f8c4f0fb7f.svg)
+![skypro](skypro.PNG)
 
 # skypro
 Репозитарий исходных кодов курса SkyPro - `Профессия Python разработчик 3.0`
